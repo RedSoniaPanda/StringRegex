@@ -11,7 +11,8 @@ def test_string_for_characters(test_string, expected):
 
 @pytest.mark.parametrize("test_string,expected", [('a', 'a'), ('_', ''),
                                                   ('abb', 'abb'), ('cb', ''),
-                                                  ('abbc', 'abb'), ('abba', 'abb')])
+                                                  ('abbc', 'abb'), ('abba', 'abb'),
+                                                  ('.', '')])
 def test_string_a_followed_by_zero_or_more_b(test_string, expected):
     match = re.match(r'ab*', test_string)
     if not match:
